@@ -48,7 +48,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 http.csrf().disable()
                 .authorizeRequests() // đường dẫn phải đc yêu cầu chứng thực luôn luôn có
                         .antMatchers("/admin/building").authenticated()// ai vào cũng được
-                        .antMatchers("/admin/building-edit").hasRole("MANAGER")   ///thêm manager mới vào dc
+                        .antMatchers("/admin/building-edit").hasRole("ADMIN")   ///thêm -> manager mới vào dc
                         .antMatchers("/admin/building-edit-**").authenticated()   ///thèn nào vào cũng dc khi được giao quản lí
                         .antMatchers("/login", "/resource/**", "/trang-chu", "/api/**").permitAll()
                 .and()
